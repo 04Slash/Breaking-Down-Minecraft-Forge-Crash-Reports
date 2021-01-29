@@ -1,0 +1,222 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 2020-12-14, 8:38 p.m.
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.kreezcraft.mobsunscreen.DamnSun.entityUpdate(DamnSun.java:24) ~[mobsunscreen:1.16.4-2.1.3] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_425_DamnSun_entityUpdate_LivingUpdateEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:297) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:315) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.LivingEntity.func_70071_h_(LivingEntity.java:2112) ~[?:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,xf:fml:bettershields:damage,pl:mixin:APP:assets/shetiphiancore/shetiphiancore.mixins.json:MixinLivingEntity,pl:mixin:A}
+	at net.minecraft.entity.MobEntity.func_70071_h_(MobEntity.java:300) ~[?:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at dev.itsmeow.whisperwoods.entity.EntityMoth.func_70071_h_(EntityMoth.java:102) ~[whisperwoods:2.0.0] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_217479_a(ServerWorld.java:611) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_217390_a(World.java:554) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:404) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:850) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:786) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:78) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:641) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:232) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Unknown Source) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.kreezcraft.mobsunscreen.DamnSun.entityUpdate(DamnSun.java:24) ~[mobsunscreen:1.16.4-2.1.3] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_425_DamnSun_entityUpdate_LivingUpdateEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:297) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:315) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.LivingEntity.func_70071_h_(LivingEntity.java:2112) ~[?:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,xf:fml:bettershields:damage,pl:mixin:APP:assets/shetiphiancore/shetiphiancore.mixins.json:MixinLivingEntity,pl:mixin:A}
+	at net.minecraft.entity.MobEntity.func_70071_h_(MobEntity.java:300) ~[?:?] {re:computing_frames,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at dev.itsmeow.whisperwoods.entity.EntityMoth.func_70071_h_(EntityMoth.java:102) ~[whisperwoods:2.0.0] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_217479_a(ServerWorld.java:611) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+-- Entity being ticked --
+Details:
+	Entity Type: whisperwoods:moth (dev.itsmeow.whisperwoods.entity.EntityMoth)
+	Entity ID: 79
+	Entity Name: Moth
+	Entity's Exact location: -59.57, 127.00, -194.21
+	Entity's Block location: World: (-60,127,-195), Chunk: (at 4,7,13 in -4,-13; contains blocks -64,0,-208 to -49,255,-193), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, 0.00, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.func_217390_a(World.java:554) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:404) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 2048
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-32,129,-192), Chunk: (at 0,8,0 in -2,-12; contains blocks -32,0,-192 to -17,255,-177), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 835 game time, 835 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 169897 (now: false), thunder time: 113238 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:850) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:786) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:78) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:641) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:232) ~[?:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Unknown Source) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.4
+	Minecraft Version ID: 1.16.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 14.0.2, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), AdoptOpenJDK
+	Memory: 1045428224 bytes (996 MB) / 1929379840 bytes (1840 MB) up to 4294967296 bytes (4096 MB)
+	CPUs: 4
+	JVM Flags: 5 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx4096m -Xms4096m -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms256m
+	ModLauncher: 8.0.6+85+master.325de55
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-3.0.5-service.jar eventbus PLUGINSERVICE 
+		/forge-1.16.4-35.1.13.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.4-35.1.13.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.4-35.1.13.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-2.2.0-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.4-35.1.13.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.4-35.1.13.jar fml TRANSFORMATIONSERVICE 
+	FML: 35.1
+	Forge: net.minecraftforge:35.1.13
+	FML Language Providers: 
+		javafml@35.1
+		minecraft@1
+	Mod List: 
+		incontrol-1.16-5.0.2.jar                          |InControl                     |incontrol                     |1.16-5.0.2          |DONE      |NOSIGNATURE
+		pitg-1.16.3-1.4.1.jar                             |Pane In The Glass             |pitg                          |1.16.3-1.4.1        |DONE      |NOSIGNATURE
+		realisticbees_1.16.4-1.0.jar                      |Realistic Bees                |realisticbees                 |1.0                 |DONE      |NOSIGNATURE
+		XaerosWorldMap_1.11.1_Forge_1.16.4.jar            |Xaero's World Map             |xaeroworldmap                 |1.11.1              |DONE      |NOSIGNATURE
+		Placebo-1.16.3-4.3.3.jar                          |Placebo                       |placebo                       |4.3.3               |DONE      |NOSIGNATURE
+		froglins-1.16.4-1.0.1.4.jar                       |Froglins                      |froglins                      |1.16.4-1.0.1.4      |DONE      |NOSIGNATURE
+		Powah-1.16.4-2.3.5.jar                            |Powah                         |powah                         |2.3.5               |DONE      |NOSIGNATURE
+		GatewaysToEternity-1.16.3-1.0.1.jar               |Gateways To Eternity          |gateways                      |1.0.1               |DONE      |NOSIGNATURE
+		jumbofurnace-1.16.4-2.2.0.1.jar                   |Jumbo Furnace                 |jumbofurnace                  |1.16.4-2.2.0.1      |DONE      |NOSIGNATURE
+		ColouredTooltips-1.16.4-10.0.2.jar                |ColouredTooltips              |colouredtooltips              |10.0.2              |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		Wither-Skeleton-Tweaks-1.16.3-5.2.1.jar           |Wither Skeleton Tweaks        |wstweaks                      |5.2.1               |DONE      |NOSIGNATURE
+		Bookshelf-1.16.4-9.1.9.jar                        |Bookshelf                     |bookshelf                     |9.1.9               |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		TheVeggieWay-1.16.4-2.2.11.jar                    |The Veggie Way                |veggie_way                    |2.2.11              |DONE      |NOSIGNATURE
+		Hornets-0.0.3.jar                                 |Hornets                       |hornets                       |0.0.3               |DONE      |NOSIGNATURE
+		shetiphiancore-1.16-3.8.4.jar                     |ShetiPhian-Core               |shetiphiancore                |3.8.4               |DONE      |NOSIGNATURE
+		PackMenu-1.16.3-2.3.0.jar                         |Pack Menu                     |packmenu                      |2.3.0               |DONE      |NOSIGNATURE
+		mcw-bridges-1.0.4-mc1.16.4.jar                    |Macaw's Bridges               |mcwbridges                    |1.0.4               |DONE      |NOSIGNATURE
+		repurposed_structures-1.16.4-2.3.0.jar            |Repurposed Structures         |repurposed_structures         |1.16.4-2.3.0        |DONE      |NOSIGNATURE
+		netherportalspread_1.16.4-4.4.jar                 |Nether Portal Spread          |netherportalspread            |4.4                 |DONE      |NOSIGNATURE
+		Lollipop-1.16.4-3.2.2.jar                         |Lollipop                      |lollipop                      |3.2.2               |DONE      |NOSIGNATURE
+		ediblebugs-1.1.07_MC1.16.4.jar                    |Edible Bugs                   |ediblebugs                    |1.1.07              |DONE      |NOSIGNATURE
+		SilentGear-1.16.3-2.3.7+176.jar                   |Silent Gear                   |silentgear                    |2.3.7+176           |DONE      |NOSIGNATURE
+		simplefarming-1.16.4-1.3.5.jar                    |Simple Farming                |simplefarming                 |1.16.4-1.3.5        |DONE      |NOSIGNATURE
+		EyesInTheDarkness-1.16.3-0.7.0.jar                |Eyes in the Darkness          |eyesinthedarkness             |0.7.0               |DONE      |NOSIGNATURE
+		curios-forge-1.16.4-4.0.2.1.jar                   |Curios API                    |curios                        |1.16.4-4.0.2.1      |DONE      |NOSIGNATURE
+		collective-1.16.4-1.53.jar                        |Collective                    |collective                    |1.53                |DONE      |NOSIGNATURE
+		betterweather-1.0.3.jar                           |Better Weather                |betterweather                 |1.0.1               |DONE      |NOSIGNATURE
+		starterkit_1.16.4-2.1.jar                         |Starter Kit                   |starterkit                    |2.1                 |DONE      |NOSIGNATURE
+		sleepsooner_1.16.4-2.2.jar                        |Sleep Sooner                  |sleepsooner                   |2.2                 |DONE      |NOSIGNATURE
+		moreoverlays-1.18.10-mc1.16.3.jar                 |More Overlays Updated         |moreoverlays                  |1.18.10-mc1.16.3    |DONE      |NOSIGNATURE
+		ItemPhysic_v1.4.8_mc1.16.4.jar                    |ItemPhysic                    |itemphysic                    |1.6.0               |DONE      |NOSIGNATURE
+		The_Undergarden-1.16.3-0.3.8.jar                  |The Undergarden               |undergarden                   |0.3.8               |DONE      |NOSIGNATURE
+		chunkloaders-1.1.3-mc1.16.4.jar                   |Chunk Loaders                 |chunkloaders                  |1.1.3               |DONE      |NOSIGNATURE
+		BetterShieldsMC1.16.3-1.1.1.jar                   |Better Shields                |bettershields                 |1.1.1               |DONE      |NOSIGNATURE
+		enchantwithmob-1.16.4-1.8.3.jar                   |Enchant With Mob              |enchantwithmob                |1.16.4-1.8.3        |DONE      |NOSIGNATURE
+		BetterBurning-1.16.3-4.0.2.jar                    |BetterBurning                 |betterburning                 |4.0.2               |DONE      |NOSIGNATURE
+		TheMasks2020-1.16.4-1.0.1.jar                     |The Masks202                  |themasks2020                  |1.0.1               |DONE      |NOSIGNATURE
+		dungeons_gear-1.16.4-3.0.1.jar                    |Dungeons Gear                 |dungeons_gear                 |3.0.1               |DONE      |NOSIGNATURE
+		BetterAdvancements-1.16.3-0.1.0.102.jar           |Better Advancements           |betteradvancements            |0.1.0.102           |DONE      |NOSIGNATURE
+		HudCompass-1.16.4-0.1.1.jar                       |HUD Compass                   |hudcompass                    |version             |DONE      |NOSIGNATURE
+		ClientTweaks_1.16.3-5.2.0.jar                     |Client Tweaks                 |clienttweaks                  |5.2.0               |DONE      |NOSIGNATURE
+		Cucumber-1.16.4-4.1.5.jar                         |Cucumber Library              |cucumber                      |4.1.5               |DONE      |NOSIGNATURE
+		mining-helmet-1.16.4-2.0.0.jar                    |Mining Helmet                 |mining_helmet                 |2.0.0               |DONE      |NOSIGNATURE
+		treeharvester_1.16.4-2.0.jar                      |Tree Harvester                |treeharvester                 |2.0                 |DONE      |NOSIGNATURE
+		giantspawn_1.16.4-2.2.jar                         |Giant Spawn                   |giantspawn                    |2.2                 |DONE      |NOSIGNATURE
+		platforms-1.16-1.7.7.jar                          |Platforms                     |platforms                     |1.7.7               |DONE      |NOSIGNATURE
+		jei-1.16.4-7.6.0.53.jar                           |Just Enough Items             |jei                           |7.6.0.53            |DONE      |NOSIGNATURE
+		metalbarrels-3.3a.jar                             |Metal Barrels                 |metalbarrels                  |3.3a                |DONE      |NOSIGNATURE
+		Undefeatables 1.0.jar                             |Undefeatables                 |undefeatables                 |1.0                 |DONE      |NOSIGNATURE
+		invtweaks-1.16.2-1.0.0.jar                        |Inventory Tweaks Renewed      |invtweaks                     |1.16.2-1.0.0        |DONE      |NOSIGNATURE
+		totaldarkness-1.2-1.16.3.jar                      |Total Darkness                |totaldarkness                 |1.2-1.16.3          |DONE      |NOSIGNATURE
+		shutupexperimentalsettings-1.0.1.jar              |Shutup Experimental Settings! |shutupexperimentalsettings    |1.0.1               |DONE      |NOSIGNATURE
+		diregoo-1.0.4.jar                                 |Dire Goo                      |diregoo                       |1.0.4               |DONE      |NOSIGNATURE
+		comforts-forge-1.16.3-4.0.0.1.jar                 |Comforts                      |comforts                      |1.16.3-4.0.0.1      |DONE      |NOSIGNATURE
+		NaturesCompass-1.16.3-1.8.5.jar                   |Nature's Compass              |naturescompass                |1.16.3-1.8.5        |DONE      |NOSIGNATURE
+		FruitTrees-1.16.3-2.2.0.jar                       |Fruit Trees                   |fruittrees                    |2.2.0               |DONE      |NOSIGNATURE
+		Kiwi-1.16.3-3.4.1.jar                             |Kiwi                          |kiwi                          |3.4.1               |DONE      |NOSIGNATURE
+		Artifacts-1.16.4-2.7.1.jar                        |Artifacts                     |artifacts                     |1.16.4-2.7.1        |DONE      |NOSIGNATURE
+		Goopers-0.0.4.jar                                 |Goopers                       |goopers                       |0.0.4               |DONE      |NOSIGNATURE
+		DungeonCrawl-1.16.3-2.1.1.jar                     |Dungeon Crawl                 |dungeoncrawl                  |2.1.1               |DONE      |NOSIGNATURE
+		topography-1.11.0.jar                             |Topography                    |topography                    |1.11.0              |DONE      |NOSIGNATURE
+		nhacampfire_1.16.4-3.0.jar                        |No Hostiles Around Campfire   |nhacampfire                   |3.0                 |DONE      |NOSIGNATURE
+		walljump-forge-1.16.3-1.3.6.jar                   |Wall-Jump!                    |walljump                      |1.16.3-1.3.6        |DONE      |NOSIGNATURE
+		Toast-Control-1.16.3-4.3.0.jar                    |Toast Control                 |toastcontrol                  |4.3.0               |DONE      |NOSIGNATURE
+		iChunUtil-1.16.3-10.0.0.jar                       |iChunUtil                     |ichunutil                     |10.0.0              |DONE      |NOSIGNATURE
+		strongfarmland-1.16.3-1.1.0.jar                   |Stronger Farmland             |strongfarmland                |1.16.3-1.1.0        |DONE      |1f:47:ac:b1:61:82:96:b8:47:19:16:d2:61:81:11:60:3a:06:4b:61:31:56:7d:44:31:1e:0c:6f:22:5b:4c:ed
+		campfiretorches-1.16.3-1.0.3.jar                  |Campfire Torches              |campfiretorches               |1.16.3-1.02         |DONE      |NOSIGNATURE
+		forge-1.16.4-35.1.13-universal.jar                |Forge                         |forge                         |35.1.13             |DONE      |22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		Waddles-1.16.4-0.8.11.jar                         |Waddles                       |waddles                       |1.16.4-0.8.11       |DONE      |NOSIGNATURE
+		simpletomb-1.16.3-1.0.2.jar                       |Simple Tombstone              |simpletomb                    |1.16.3-1.0.2        |DONE      |1f:47:ac:b1:61:82:96:b8:47:19:16:d2:61:81:11:60:3a:06:4b:61:31:56:7d:44:31:1e:0c:6f:22:5b:4c:ed
+		hidehands_1.16.4-1.1.jar                          |Hide Hands                    |hidehands                     |1.1                 |DONE      |NOSIGNATURE
+		tellme-forge-1.16.3-0.9.0.jar                     |TellMe                        |tellme                        |0.9.0               |DONE      |NOSIGNATURE
+		forge-1.16.4-35.1.13-client.jar                   |Minecraft                     |minecraft                     |1.16.4              |DONE      |NOSIGNATURE
+		cofh_core-1.16.3-1.0.4.jar                        |CoFH Core                     |cofh_core                     |1.0.4               |DONE      |NOSIGNATURE
+		thermal-1.16.3-1.0.5.jar                          |Thermal Series                |thermal                       |1.0.5               |DONE      |NOSIGNATURE
+		thermal_expansion-1.16.3-1.0.5.jar                |Thermal Expansion             |thermal_expansion             |1.0.5               |DONE      |NOSIGNATURE
+		SimpleAbsorption-1.16.4-1.1.1.jar                 |Simple Absorption             |simple_absorption             |1.1.1               |DONE      |NOSIGNATURE
+		fxcontrol-1.16-2.0.1.jar                          |FxControl                     |fxcontrol                     |1.16-2.0.1          |DONE      |NOSIGNATURE
+		EnchantmentDescriptions-1.16.4-6.0.2.jar          |EnchantmentDescriptions       |enchdesc                      |6.0.2               |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		theoneprobe-1.16-3.0.6.jar                        |The One Probe                 |theoneprobe                   |1.16-3.0.6          |DONE      |NOSIGNATURE
+		swingthroughgrass-1.16.4-1.5.3.jar                |SwingThroughGrass             |swingthroughgrass             |1.16.4-1.5.3        |DONE      |NOSIGNATURE
+		roughtweaks-2.0.jar                               |Rough Tweaks                  |roughtweaks                   |2.0                 |DONE      |NOSIGNATURE
+		MouseTweaks-2.13-mc1.16.2.jar                     |Mouse Tweaks                  |mousetweaks                   |2.13                |DONE      |NOSIGNATURE
+		nccreepers_1.16.4-1.2.jar                         |Naturally Charged Creepers    |nccreepers                    |1.2                 |DONE      |NOSIGNATURE
+		SilentLib-1.16.3-4.9.0+63.jar                     |Silent Lib                    |silentlib                     |4.9.0+63            |DONE      |NOSIGNATURE
+		Wildfires-0.0.2.jar                               |Wildfires                     |wildfires                     |0.0.2               |DONE      |NOSIGNATURE
+		CreativeCore_v2.0.8_mc1.16.4.jar                  |CreativeCore                  |creativecore                  |2.0.0               |DONE      |NOSIGNATURE
+		HerdMentality-1.16.4-5.0.1.jar                    |HerdMentality                 |herdmentality                 |5.0.1               |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		packedup-1.0.19a-mc1.16.4.jar                     |PackedUp                      |packedup                      |1.0.19a             |DONE      |NOSIGNATURE
+		towers_of_the_wild-1.16.4-2.0.1.jar               |Towers Of The Wild            |towers_of_the_wild            |1.16.4-2.0.1        |DONE      |NOSIGNATURE
+		whisperwoods-1.16.4-2.0.0.jar                     |Whisperwoods                  |whisperwoods                  |2.0.0               |DONE      |NOSIGNATURE
+		Xaeros_Minimap_20.27.3_Forge_1.16.4.jar           |Xaero's Minimap               |xaerominimap                  |20.27.3             |DONE      |NOSIGNATURE
+		thermal_cultivation-1.16.3-1.0.5.jar              |Thermal Cultivation           |thermal_cultivation           |1.0.5               |DONE      |NOSIGNATURE
+		mobsunscreen-1.16.4-2.1.3.jar                     |Mob Sunscreen                 |mobsunscreen                  |1.16.4-2.1.3        |DONE      |NOSIGNATURE
+		FastWorkbench-1.16.3-4.4.1.jar                    |FastWorkbench                 |fastbench                     |4.4.1               |DONE      |NOSIGNATURE
+		globaldataandresourcepacks-1.16.1-1.7.2.jar       |Global Data- & Resourcepacks  |globaldataandresourcepacks    |1.16.1-1.7.2        |DONE      |NOSIGNATURE
+		PickleTweaks-1.16.4-5.1.4.jar                     |Pickle Tweaks                 |pickletweaks                  |5.1.4               |DONE      |NOSIGNATURE
+		FastFurnace-1.16.3-4.3.0.jar                      |FastFurnace                   |fastfurnace                   |4.3.0               |DONE      |NOSIGNATURE
+		World Stripper-1.16.3-1.7.2.jar                   |World Stripper                |worldstripper                 |1.7.2               |DONE      |NOSIGNATURE
+		AppleSkin-mc1.16.2-forge-1.0.14.jar               |AppleSkin                     |appleskin                     |1.0.14              |DONE      |NOSIGNATURE
+		solcarrot-1.16.3-1.9.8.jar                        |Spice of Life: Carrot Edition |solcarrot                     |1.16.3-1.9.8        |DONE      |NOSIGNATURE
+		byg-1.1.5.jar                                     |Oh The Biomes You'll Go       |byg                           |1.1.5               |DONE      |NOSIGNATURE
+		grindstonesharpertools_1.16.4-1.4.jar             |Grindstone Sharper Tools      |grindstonesharpertools        |1.4                 |DONE      |NOSIGNATURE
+		healingcf_1.16.4-3.1.jar                          |Healing Campfire              |healingcf                     |3.1                 |DONE      |NOSIGNATURE
+	Crash Report UUID: 1fe0ebb0-e975-459d-a9f4-a06230eadec8
+	Kiwi Modules: 
+		fruittrees:cherry
+		fruittrees:core
+		fruittrees:hybridization
+		kiwi:contributors
+		kiwi:data
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:incontrol (incompatible), mod:pitg (incompatible), mod:realisticbees, mod:xaeroworldmap, mod:placebo (incompatible), mod:froglins, mod:powah, mod:gateways (incompatible), mod:jumbofurnace (incompatible), mod:colouredtooltips, mod:wstweaks (incompatible), mod:bookshelf, mod:veggie_way (incompatible), mod:hornets, mod:shetiphiancore, mod:packmenu (incompatible), mod:mcwbridges (incompatible), mod:repurposed_structures, mod:netherportalspread, mod:lollipop, mod:ediblebugs (incompatible), mod:silentgear, mod:simplefarming, mod:eyesinthedarkness (incompatible), mod:curios, mod:collective, mod:betterweather (incompatible), mod:starterkit, mod:sleepsooner, mod:moreoverlays (incompatible), mod:itemphysic (incompatible), mod:undergarden, mod:chunkloaders, mod:bettershields, mod:enchantwithmob, mod:betterburning, mod:themasks2020, mod:dungeons_gear, mod:betteradvancements, mod:hudcompass (incompatible), mod:clienttweaks (incompatible), mod:cucumber, mod:mining_helmet (incompatible), mod:treeharvester, mod:giantspawn, mod:platforms, mod:jei, mod:metalbarrels (incompatible), mod:undefeatables, mod:invtweaks (incompatible), mod:totaldarkness, mod:shutupexperimentalsettings (incompatible), mod:diregoo (incompatible), mod:comforts (incompatible), mod:naturescompass (incompatible), mod:fruittrees, mod:kiwi (incompatible), mod:artifacts, mod:goopers, mod:dungeoncrawl, mod:topography (incompatible), mod:nhacampfire, mod:walljump (incompatible), mod:toastcontrol (incompatible), mod:ichunutil, mod:strongfarmland (incompatible), mod:campfiretorches, mod:forge, mod:waddles, mod:simpletomb (incompatible), mod:hidehands, mod:tellme (incompatible), mod:cofh_core (incompatible), mod:thermal (incompatible), mod:thermal_expansion (incompatible), mod:simple_absorption (incompatible), mod:fxcontrol (incompatible), mod:enchdesc, mod:theoneprobe, mod:swingthroughgrass (incompatible), mod:roughtweaks, mod:mousetweaks, mod:nccreepers, mod:silentlib (incompatible), mod:wildfires, mod:creativecore (incompatible), mod:herdmentality (incompatible), mod:packedup, mod:towers_of_the_wild, mod:whisperwoods (incompatible), mod:xaerominimap, mod:thermal_cultivation (incompatible), mod:mobsunscreen (incompatible), mod:fastbench (incompatible), mod:globaldataandresourcepacks (incompatible), mod:pickletweaks, mod:fastfurnace (incompatible), mod:worldstripper, mod:appleskin, mod:solcarrot (incompatible), mod:byg, mod:grindstonesharpertools, mod:healingcf, file/escapefrom2020
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'
